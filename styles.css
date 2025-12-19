@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+	--light-grey: rgb(182, 177, 177);
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background-color: #fffefe;
+	font-family: "Lora", serif;
+	padding: 2em;
+	color: #434343;
+	font-family: "Open sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+}
+
+h2 {
+	font-size: 1.2rem;
+	margin-bottom: 0.5em;
+}
+
+h3 {
+	font-size: 0.875rem;
+}
+
+p {
+	font-family: "Open sans", sans-serif;
+	line-height: 1.5;
+	font-size: 11px;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 0.75rem;
+	transition: color 0.3s ease;
+
+	&:hover {
+		color: var(--light-grey);
+	}
+}
+
+img.picture {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto;
+	object-fit: cover;
+	margin-bottom: 1em;
+}
+ul {
+	margin-left: -20px;
+}
+
+li.links {
+	font-size: 1rem;
+}
+
+.container {
+	max-width: 700px;
+	margin: 0 auto;
+	display: flex;
+	border: 1px solid var(--light-grey);
+	box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.2);
+	gap: 1em;
+
+	.aside {
+		padding: 2.2em 1.5em 1em;
+		background-color: rgb(92, 92, 92);
+		color: white;
+		flex: 1 1 30%;
+
+		p {
+			font-size: 0.75rem;
+		}
+	}
+
+	.main-content {
+		padding: 1em;
+		flex: 3 1 500px;
+	}
+}
+
+.flex {
+	display: flex;
+	align-items: flex-start;
+	position: relative;
+
+	.left {
+		padding-right: 0.5em;
+		flex: 1 1 28%;
+
+		&::after {
+			display: block;
+			content: "";
+			height: 100%;
+			width: 1px;
+			background-color: var(--light-grey);
+			position: absolute;
+			left: 33.5%;
+			top: 6px;
+		}
+	}
+
+	.right {
+		padding-left: 0.75em;
+		flex: 1 1 60%;
+		padding-bottom: 0.5em;
+	}
+}
+
+.experience .flex:last-child .left::after,
+.education .flex:last-child .left::after {
+	height: calc(100% - 12px);
+}
+
+.header {
+	justify-content: space-between;
+	gap: 1em;
+	padding: 1em 0;
+	border-bottom: 1px solid grey;
+
+	h1 {
+		letter-spacing: 0px;
+		margin-bottom: 0;
+	}
+
+	p {
+		margin-top: 0;
+	}
+
+	.job-title {
+		font-size: 1rem;
+		letter-spacing: 1.5px;
+	}
+
+	.info {
+		font-size: 0.75rem;
+		margin: 0.5em;
+	}
+}
+
+.body {
+	padding-top: 0.5em;
+}
+
+.circle {
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 80%;
+	background-color: var(--light-grey);
+	position: absolute;
+	left: 32.4%;
+	top: 5%;
+}
+
+@media (max-width: 900px) {
+	.container {
+		overflow-x: scroll;
+	}
+}
